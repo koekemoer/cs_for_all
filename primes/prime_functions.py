@@ -1,7 +1,7 @@
 import sys
 import math
 
-sys.setrecursionlimit(20000)
+sys.setrecursionlimit(50000)
 def _divisors(n, low, high):
     '''returns True is n has a divisor in the range from low to high'''
     if low > high:
@@ -27,10 +27,11 @@ def _reverseNum(n):
         firstSymbol = s[0]
         return _reverseNum(s[1:]) + firstSymbol
 
-# NOT EFFECTIVE
 def isEmirp(n):
+    '''returns True if number is a Emirp - a prime number that is also prime if reversed'''
     if str(n) != _reverseNum(n):
         return isPrime(int(_reverseNum(n)))
+    return False
 
 def listPrimes(n, limit):
     '''returns a list of prime numbers between n and limit'''
@@ -98,6 +99,6 @@ def primeQuads(numList):
         i += 1
     return quadList
 
-primeList = primeSieve(range(1, 1000))
+# primeList = primeSieve(range(1, 1000))
 # print(primeList)
-print(emirpSieve(primeList))
+# print(emirpSieve(primeList))
