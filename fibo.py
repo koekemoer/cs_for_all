@@ -1,3 +1,11 @@
+import math as m
+
+def fibValue(n):
+'''Using sqrt method'''
+  phi = (1 + m.sqrt(5))/2
+  res = round((phi**n)/(m.sqrt(5)))
+  return res
+
 def fib(n):
   a, b = 0, 1
   
