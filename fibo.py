@@ -6,7 +6,7 @@ def fib(n):
     
   return a
   
-def productFib(prod):
+def productFibLongAssWay(prod):
   currentVal = 0
   i = 0
   f1 = f2 = 0
@@ -18,3 +18,9 @@ def productFib(prod):
     i += 1
     
   return [f1, f2, True] if currentVal == prod else [f1, f2, False]
+
+def productFib(prod):
+  f1, f2 = 0, 1
+  while prod > f1 * f2:
+    f1, f2 = f2, f1 + f2
+  return [f1, f2, f1*f2 == prod]
